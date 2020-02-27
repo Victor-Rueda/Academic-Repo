@@ -1,0 +1,32 @@
+***
+This program will ask the user if they'd like to book, 
+and if so how many beds, king and/or doubles.
+with certain discount rate dependent on the number of beds needed
+***
+
+
+days = int(input("How many days would you like to stay in Hotel ABC?"))
+
+if(days > 0):
+    rooms = int(input("How many rooms will you be needing?"))
+    king = int(input("King size room runs $100 per night, how many will you need?"))
+    double = int(input("Double sized rooms run $80 per night, how many will you need?"))
+
+
+    while(king + double != rooms):
+        print("The number of rooms doesn't add up, please enter again")
+        king = int(input("King size room runs $100 per night, how many will you need?"))
+        double = int(input("Double sized rooms run $80 per night, how many will you need?"))
+elif(days == 0):
+    print("Visit us soon!")
+
+total = days * ((king*100)+(double*80))
+
+if(days>3 and rooms<=3):
+    total *= .9
+if(days<=3 and rooms>3):
+    total *= .9
+if(days>3 and rooms>3):
+    total *= .85
+
+print("Your grand total is: ${:,.2f}\n".format(total))
