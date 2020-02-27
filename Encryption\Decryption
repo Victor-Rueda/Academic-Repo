@@ -1,0 +1,60 @@
+'''
+Encryption and Decryption Modules.
+Key and cipher text are hard coded.
+Just leaving this here for future reference.
+'''
+
+def encryption(key, message):
+    return translate_message(key, message, 'encrypt')
+
+def decryption(key, message):
+    return translate_message(key, message, 'decrypt')
+
+
+
+def translate_message(key, message, mode):
+
+    translation = []
+
+    key_element = 0
+    key = key.upper()
+
+    for x in message:
+        num = LETTERS.find(x.upper())
+        if num != -1:      # checks to see if element is in Letters to avoid spaces.
+            if mode == 'encrypt':
+                num += (LETTERS.find(key[key_element]))
+            elif mode == 'decrypt':
+                num -= (LETTERS.find(key[key_element]))
+
+
+        if x.isupper():
+            translation.append(LETTERS[num])
+        elif x.islower():
+            translation.append(LETTERS[num].lower())
+
+        key_element += 1
+        if key_element == len(key):
+                key_element = 0
+        if num == -1:
+                    # symbol is not in Array of Alphabetical Elements.
+            translation.append(x)
+
+                #print (translation)
+    print(''.join(translation))
+
+
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+cipher_message = """Pomf wvorggn uweec ral kpsdyaq nzge, kw mom amn fczpvk lo wcm.
+Lice gykl lpst cmn lgv't gmfl lw kxsu, i bzixk moil'k mejell zwgbir.
+Vgb wrer fwm lri mk ezil iss kw, lhbsszowmb a gyklnjmw issmo.
+Ql'c uahb ggu hmg'b ggu'pj jwem ty pnl, ezex rbtm zwvoejl ql'k dvsmo.
+Bzebi bz oqkdyq mv tm hkh yywe eicxydlv egrnw tul iutc."""
+
+cipher_key = 'thisisakey'
+
+
+
+decryption(cipher_key, cipher_message)
+
