@@ -1,0 +1,35 @@
+import random
+
+def First_Five():
+    picks = []
+    for x in range(0,5):
+        First = True
+        while(First == True):
+            y = random.randint(1,70)
+            if(picks.count(y) == 0):
+                picks.append(y)
+                First = False
+
+    return picks
+
+def Single_Pick():
+    z = [random.randint(1,27)]
+    return z
+
+
+
+TicketNo = int(input('How many Mega Millions tickets would you like to purchase?\n'))
+
+for x in range(0,TicketNo):
+    W = First_Five()
+    Q = Single_Pick()
+    Final = []
+    Final.extend(W)
+    Final.extend(Q)
+    last = '{:>2},{:>2},{:>2},{:>2},{:>2},{:>2}'.format(Final[0], Final[1], Final[2], Final[3], Final[4], Final[5])
+    print("Ticket#{}:\t\t{}\n".format(x+1,last))
+
+Total_cost = ( 2 * TicketNo )
+
+print("You purchased {} tickets, and the price is ${:,}\n".format(TicketNo,Total_cost))
+print("Good Luck!\n")
