@@ -1,8 +1,8 @@
-***
+'''
 This program will ask the user if they'd like to book, 
 and if so how many beds, king and/or doubles.
 with certain discount rate dependent on the number of beds needed
-***
+'''
 
 
 days = int(input("How many days would you like to stay in Hotel ABC?"))
