@@ -3,7 +3,8 @@
 
 Welcome to my school stuff.
 This repository has some of my code written during my undergraduate degree at the University of Texas at San Antonio. 
-Just looking to consolidate all my code where I can continue to reference, build, enhance, and share with others. Thanks Github!
+Just looking to consolidate all my code where I can continue to reference, build, enhance, and share with others. 
+Thanks Github!
 Am continuosly adding to this repo as the applications are found from my hard drives.
 Just getting started!
 
